@@ -41,4 +41,8 @@ export class WebContents<T extends WebContentsEventMapping> extends EmitterBase<
             ignoreCache
         }, this.identity)).then(() => undefined);
     }
+
+    public print(options?: any): Promise<void> {
+        return this.wire.sendAction('print', Object.assign({}, this.identity, { options })).then(() => undefined);
+    }
 }
