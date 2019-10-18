@@ -448,6 +448,11 @@ describe('Window.', function() {
         it('Fulfilled', () => testWindow.stopNavigation().then(() => assert(true)));
     });
 
+    describe('print()', () => {
+
+        it('Fulfilled', () => testWindow.print().then(() => assert(true)));
+    });
+
     describe('wrapSync()', () => {
         it('exists', () => {
             assert(typeof fin.Window.wrapSync === 'function');
