@@ -1211,4 +1211,8 @@ export default class System extends EmitterBase<SystemEvents> {
         const { name } = serviceIdentifier;
         return this.wire.sendAction('get-service-configuration', {name}).then(({ payload }) => payload.data);
     }
+
+    public getPrinters(): Promise<void> {
+        return this.wire.sendAction('get-printers', Object.assign({}, this.identity)).then(({ payload }) => payload.data);
+    }
 }
